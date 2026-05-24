@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كل عيد وأنتِ معايا يا لولي ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Dancing+Script:wght@700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* ستايل العناصر اللي بتطوف في الخلفية */
+        .floating-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .floating-item {
+            position: absolute;
+            bottom: -50px;
+            font-size: 24px;
+            animation: floatUp 8s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* الحاوية الرئيسية للمحتوى */
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(255, 75, 110, 0.2);
+            text-align: center;
+            border: 2px solid #ffb3c6;
+        }
+
+        /* الكلام الرومانسي */
+        .love-letter {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #4a4a4a;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .english-love {
+            font-family: 'Dancing Script', cursive;
+            font-size: 32px;
+            color: #ff477e;
+            margin-top: 15px;
+            direction: ltr;
+        }
+
+        /* معرض الصور الثابت */
+        .gallery-section {
+            background: #fff0f3;
+            border: 2px dashed #ff758f;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .gallery-title {
+            margin-top: 0;
+            font-weight: bold;
+            color: #ff477e;
+            font-size: 18px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* شريط الحب التفاعلي */
+        .slider-section {
+            margin: 40px 0;
+            background: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .slider-label {
+            font-size: 18px;
+            color: #ff477e;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .range-slider {
+            width: 80%;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 12px;
+            border-radius: 10px;
+            background: #ffe5ec;
+            outline: none;
+            margin: 20px 0;
+        }
+
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #ff477e;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 75, 110, 0.5);
+            transition: 0.2s;
+        }
+
+        .percentage-display {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff477e;
+        }
+
+        /* صندوق الكوميك */
+        .comic-box {
+            margin-top: 20px;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .comic-img {
+            max-width: 250px;
+            max-height: 220px;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom: 15px;
+            border: 2px solid #fff;
+        }
+
+        .comic-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            padding: 0 10px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="floating-container" id="floating-bg"></div>
+
+    <div class="container">
+        <div class="love-letter">
+            حبيبتي وروحي وكل حاجة ليا في الدنيا دي كل عيد أضحى وإحنا مع بعض خطوة بخطوة ومفيش أي حاجة في العالم تقدر تفرقنا عن بعض أبداً 🫶🏻 أنا بجد محظوظ بيكي وبوجودك في حياتي وبكل تفصيلة صغيرة بنعيشها سوا يا أغلى من عينيا 👀❤️ العيد بجد بيبقى ليه طعم تاني خالص وأنتِ معايا وفرحتي بتبقى دايماً كاملة بيكي حتي لو مش مع بعض يا عمري ولا شايفين بعض فانتي دايما فقلبي و بفكر فيكي طول الوقت❤️❤️<br><br>
+            يا رب يكتبلنا الخير دايماً سوا ونفضل دايماً أحلى اتنين في الدنيا دي كلها وكل عيد وأنتِ منورة دنيتي يا روحي وعقبال كل السنين الجاية وإحنا سوا 🐏❤️✨<br><br>
+            بحبك قوي يا أحلي لولييييييييييييييييييييييييي❤️❤️
+            <div class="english-love">I love you Looly 😘❤️</div>
+        </div>
+
+        <div class="gallery-section">
+            <div class="gallery-title">📸 ألبوم أحلى ذكريات لينا سوا 💖</div>
+            <div class="gallery">
+                <img src="assets/1.jpg" alt="Our Memory 1">
+                <img src="assets/2.jpg" alt="Our Memory 2">
+                <img src="assets/3.jpg" alt="Our Memory 3">
+                <img src="assets/4.jpg" alt="Our Memory 4">
+            </div>
+        </div>
+
+        <hr style="border: 0; height: 1px; background: #ffb3c6; margin: 30px 0;">
+
+        <div class="slider-section">
+            <div class="slider-label">شدّي الشريطة دي وشوفي بتحبيني قد إيه؟ 👀👇</div>
+            <input type="range" min="1" max="5" step="1" value="1" class="range-slider" id="love-slider">
+            <div class="percentage-display"><span id="slider-value">10</span>%</div>
+
+            <div class="comic-box">
+                <img src="" alt="Comic" class="comic-img" id="comic-image">
+                <p class="comic-text" id="comic-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. توليد القلوب والخرفان في الخلفية بشكل عشوائي
+        const bgContainer = document.getElementById('floating-bg');
+        const items = ['❤️', '💗', '💖', '🐏', '🐑', '✨'];
+        
+        function createFloatingItem() {
+            const item = document.createElement('div');
+            item.classList.add('floating-item');
+            item.innerText = items[Math.floor(Math.random() * items.length)];
+            item.style.left = Math.random() * 100 + 'vw';
+            item.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            item.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            
+            bgContainer.appendChild(item);
+            
+            setTimeout(() => {
+                item.remove();
+            }, 10000);
+        }
+        setInterval(createFloatingItem, 400);
+
+        // 2. ربط أرقام الـ Slider (من 1 لـ 5) بالنسب المئوية والصور المقابلة لها بالظبط
+        const comicData = {
+            1: {
+                percent: 10,
+                text: "10% بس؟! دة أنا هجيلك بكرة بالخروف ونعمل خناقة كبيييرة! 🐑👊",
+                img: "assets/c1.jpg"
+            },
+            2: {
+                percent: 30,
+                text: "30%؟ لأ دة إحنا لسة مأكلناش فتة مع بعض باين كدة.. زعلان منك! 🥲💔",
+                img: "assets/c2.jpg"
+            },
+            3: {
+                percent: 50,
+                text: "50%؟ يعني نص نص? ماشي يا لولي مقبولة منك بس العيد الجاي عاوزها تزيد! 🤔❤️",
+                img: "assets/c3.jpg"
+            },
+            4: {
+                percent: 80,
+                text: "80%! أيوة كدة بدأنا ندخل في الغالي.. بحبك أكتر على فكرة! 😍🔥",
+                img: "assets/c4.jpg"
+            },
+            5: {
+                percent: 100,
+                text: "100%!!! يا روحي وقلبي وعيني.. أنا اللي بموت فيكي وكل عيد وإحنا سوا يا أحلى لولي في الدنيا! 🐏👑❤️❤️",
+                img: "assets/c5.jpg"
+            }
+        };
+
+        const slider = document.getElementById('love-slider');
+        const sliderValue = document.getElementById('slider-value');
+        const comicText = document.getElementById('comic-text');
+        const comicImage = document.getElementById('comic-image');
+
+        function updateComic(value) {
+            const currentData = comicData[value];
+            sliderValue.innerText = currentData.percent;
+            comicText.innerText = currentData.text;
+            comicImage.src = currentData.img;
+        }
+
+        slider.addEventListener('input', function() {
+            updateComic(this.value);
+        });
+
+        // تشغيل النسبة الأولى تلقائياً عند فتح الويب سايت (المرحلة رقم 1 وهي الـ 10%)
+        updateComic(1);
+    </script>
+</body>
+</html>
